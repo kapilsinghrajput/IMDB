@@ -18,7 +18,7 @@ const Header = () => {
         <div className='flex items-center gap-4'>
           <DarkmodeSwich/>
         <Link href={"/"} className='flex'>
-          <span className='bg-yellow-400 p-1 rounded-md font-extrabold text-black text-2xl '>IMDB</span>
+          <span className='bg-yellow-400 p-1 rounded-md font-extrabold text-black text-2xl '>Next-JS</span>
         </Link>
         </div>
 
