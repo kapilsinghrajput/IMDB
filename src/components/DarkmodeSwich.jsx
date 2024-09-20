@@ -8,10 +8,8 @@ const DarkmodeSwitch = () => {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Determine the current theme
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  // To prevent hydration mismatch, we only show the button after the component is mounted
   useEffect(() => setMounted(true), []);
 
   return (
@@ -19,12 +17,12 @@ const DarkmodeSwitch = () => {
       {mounted && (
         currentTheme === "dark" ? (
           <FaRegSun
-            className="text-xl cursor-pointer hover:text-amber-500"
+            className="text-xl cursor-pointer hover:text-red-300"
             onClick={() => setTheme("light")}
           />
         ) : (
           <FaMoon
-            className="text-xl cursor-pointer hover:text-amber-400"
+            className="text-xl cursor-pointer hover:text-red-300"
             onClick={() => setTheme("dark")}
           />
         )
