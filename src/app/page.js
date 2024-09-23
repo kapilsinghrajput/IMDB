@@ -1,6 +1,9 @@
 import MovieCards from "src/components/MovieCards";
+import { Suspense } from "react";
 
 const API_KEY = process.env.API_KEY;
+
+const Loading = () => <div>Loading movies...</div>;
 
 const Home = async ({ searchParams }) => {
   const genre = searchParams.genre || "fetchTrending";
@@ -23,7 +26,9 @@ const Home = async ({ searchParams }) => {
 
   return (
     <div>
-      <MovieCards data={data} error={error} pageIndex={pageIndex} genre={genre} />
+      <Suspense fallback={<Loading />}>
+        <MovieCards data={data} error={error} pageIndex={pageIndex} genre={genre} />
+      </Suspense>
     </div>
   );
 };

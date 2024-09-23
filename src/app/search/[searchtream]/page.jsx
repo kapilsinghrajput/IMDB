@@ -1,7 +1,9 @@
 import React from "react";
 import SearchResult from "src/components/SearchResult";
 
-export default async function search({ params }) {
+const Loading = () => <div>Loading results...</div>;
+
+export default async function Search({ params }) {
   const searchTerm = params.searchtream;
 
   try {
@@ -20,10 +22,10 @@ export default async function search({ params }) {
         {data.results.length === 0 ? (
           <h1>No results found</h1>
         ) : (
-          <Suspense fallback={<div>Loading...</div>}>
-          <SearchResult data={data} /> 
-          </Suspense>
-
+          <div>
+            <Loading />
+            <SearchResult data={data} />
+          </div>
         )}
       </div>
     );
