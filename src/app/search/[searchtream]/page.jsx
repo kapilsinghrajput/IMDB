@@ -20,7 +20,10 @@ export default async function search({ params }) {
         {data.results.length === 0 ? (
           <h1>No results found</h1>
         ) : (
-          <SearchResult data={data} /> // Pass the entire data object here
+          <Suspense fallback={<div>Loading...</div>}>
+          <SearchResult data={data} /> 
+          </Suspense>
+
         )}
       </div>
     );
