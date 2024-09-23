@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function SearchResult({ data }) { // Accept entire data
+export default function SearchResult({ data }) { 
   const { results } = data; // Destructure results from data
 
   if (!results || results.length === 0) {

@@ -1,19 +1,19 @@
-import SearchResult from '@/components/SearchResult';
-import React from 'react';
+import React from "react";
+import SearchResult from "src/components/SearchResult";
 
 export default async function search({ params }) {
-  const searchTerm = params.searchtream; 
-  
+  const searchTerm = params.searchtream;
+
   try {
-    const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${searchTerm}&language=en-US&page=1&include_adult=false`);
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${searchTerm}&language=en-US&page=1&include_adult=false`
+    );
 
     if (!res.ok) {
-      throw new Error('Failed to fetch data');
+      throw new Error("Failed to fetch data");
     }
 
     const data = await res.json();
-    console.log(data);
-    
 
     return (
       <div>

@@ -3,11 +3,9 @@ import { FaStar } from "react-icons/fa";
 
 export default async function  MoviePage({params}) {
     const movieId = params.id
-    // console.log("movieId",movieId);
      
       const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`);
       const data = await res.json();
-      // console.log(data);
       
 
     return (
@@ -16,6 +14,7 @@ export default async function  MoviePage({params}) {
         width={500}
         height={300}
         className=" max-h-96 "
+        alt={`Poster of ${data.original_title}`}
         ></Image>
 
         <div>

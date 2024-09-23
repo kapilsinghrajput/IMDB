@@ -1,5 +1,6 @@
+import MovieCards from "src/components/MovieCards";
+
 const API_KEY = process.env.API_KEY;
-import MovieCards from "@/components/MovieCards";
 
 const Home = async ({ searchParams }) => {
   const genre = searchParams.genre || "fetchTrending";
