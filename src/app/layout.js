@@ -9,7 +9,7 @@ import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "IMDB",
+  title: "movieblooms",
   description: "This Is Movie Clone Database",
 };
 
